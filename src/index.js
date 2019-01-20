@@ -18,6 +18,7 @@ import rootReducer from 'store'
 
 import App from './App'
 import Examples from 'scenes/Examples'
+import Counter from 'scenes/Counter'
 import ProtectedRoute from 'containers/ProtectedRoute'
 
 const history = createBrowserHistory()
@@ -40,6 +41,7 @@ ReactDOM.render(
       <App>
         <Switch>
           <Route exact path="/" component={Examples} />
+          <Route exact path="/hello" component={Counter} />
           <ProtectedRoute path="/protected" component={() => 'Protected content'} />
           <Route render={() => 404} />
         </Switch>

@@ -12,11 +12,11 @@ import './growl.scss'
 
 const GrowlMessage = ({ message, type, hidden }) => (
   <li className={cn(
-      'growl',
-      hidden && 'growl--hidden',
-      type === GROWL_ERROR && 'growl--error',
-      type === GROWL_SUCCESS && 'growl--success',
-    )}
+    'growl',
+    hidden && 'growl--hidden',
+    type === GROWL_ERROR && 'growl--error',
+    type === GROWL_SUCCESS && 'growl--success',
+  )}
   >
     {message}
   </li>
@@ -31,5 +31,5 @@ const Growl = ({ messages }) => (
 )
 
 export default connect(
-  state => ({ messages: getGrowls(state) }),
+  state => ({ messages: state.ui.growls }),
 )(Growl)
